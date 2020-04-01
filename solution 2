@@ -1,0 +1,14 @@
+num=eval(input())
+def keyy(a):
+  try:
+    for k in a:
+      if type(a[k])==type({}):
+        for i in a[k]:
+          a[k+i]=a[k][i]
+        a.pop(k)
+        keyy(a)
+    else:
+      print(a)
+  except RuntimeError:
+    pass
+keyy(num)
